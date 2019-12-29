@@ -31,7 +31,7 @@ public class AccountActivityStepDefs {
 
     @Then("title of the page should be Zero – Account activity")
     public void title_of_the_page_should_be_Zero_Account_activity() {
-        String expectedTitle = "Zero – Account activity";
+        String expectedTitle = "Zero - Account Activity";
         String actualTitle = Driver.get().getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
     }

@@ -1,9 +1,11 @@
 package com.zerobank.stepdefinitions;
 
 import com.zerobank.pages.PayBillsPage;
+import com.zerobank.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class AddNewPayeeStepDefs {
     @Given("Add New Payee tab")
     public void add_New_Payee_tab() {
         new LoginStepDefs().user_is_logged_in();
+        BrowserUtils.waitForPresenceOfElement(By.id("pay_bills_tab"),3);
         payBillsPage.PayBillsModule.click();
         payBillsPage.addNewPayeeTab.click();
 

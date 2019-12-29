@@ -2,6 +2,7 @@ package com.zerobank.stepdefinitions;
 
 import com.zerobank.pages.LoginPage;
 import com.zerobank.pages.PayBillsPage;
+import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,6 +16,7 @@ public class PayBillsPageStepDefs {
     @When("user is on Pay Bills page")
     public void user_is_on_Pay_Bills_page() {
         new LoginStepDefs().user_is_logged_in();
+        BrowserUtils.waitForPresenceOfElement(By.id("pay_bills_tab"),3);
         payBillsPage.PayBillsModule.click();
         String expectedURL = "http://zero.webappsecurity.com/bank/pay-bills.html";
         String actualURL = Driver.get().getCurrentUrl();

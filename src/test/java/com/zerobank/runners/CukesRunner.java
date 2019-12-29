@@ -12,16 +12,16 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/zerobank/stepdefinitions",
-        dryRun = false,
+        dryRun = false
 //        tags = "@LoginTest"
 //        tags = "@AccountSummaryPageTest"
 //        tags = "@AccountActivityPageTest"
 //        tags = "@PayBillPageTest"
 //        tags = "@AccountActivityNavigationTest"
-//        tags = ="@FindTransactionsTest"
+//        tags = "@FindTransactionsTest"
 //        tags = "@addNewPayeeTest"
 //        tags = "@PurchaseForeignCurrencyTest"
-        tags = "@wip" // work in progress
+//        tags = "@wip" // work in progress
 
 )
 public class CukesRunner {
