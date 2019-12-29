@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import java.util.List;
+import java.util.Map;
 
 public class AddNewPayeeStepDefs {
 
@@ -22,13 +23,23 @@ public class AddNewPayeeStepDefs {
 
     }
 
+//    @Given("creates new payee using following information")
+//    public void creates_new_payee_using_following_information(List<String> list) {
+//        System.out.println(list);
+//        payBillsPage.newPayeeName.sendKeys(list.get(1));
+//        payBillsPage.newPayeeAddress.sendKeys(list.get(3));
+//        payBillsPage.newPayeeAcc.sendKeys(list.get(5));
+//        payBillsPage.newPayeeDetails.sendKeys(list.get(7));
+//        payBillsPage.addNewPayeeButton.click();
+//
+//    }
+
     @Given("creates new payee using following information")
-    public void creates_new_payee_using_following_information(List<String> list) {
-        System.out.println(list);
-        payBillsPage.newPayeeName.sendKeys(list.get(1));
-        payBillsPage.newPayeeAddress.sendKeys(list.get(3));
-        payBillsPage.newPayeeAcc.sendKeys(list.get(5));
-        payBillsPage.newPayeeDetails.sendKeys(list.get(7));
+    public void creates_new_payee_using_following_information(Map<String, String> userData) {
+        payBillsPage.newPayeeName.sendKeys(userData.get("Payee Name"));
+        payBillsPage.newPayeeAddress.sendKeys(userData.get("Payee Address"));
+        payBillsPage.newPayeeAcc.sendKeys(userData.get("Account"));
+        payBillsPage.newPayeeDetails.sendKeys(userData.get("Payee details"));
         payBillsPage.addNewPayeeButton.click();
 
     }
