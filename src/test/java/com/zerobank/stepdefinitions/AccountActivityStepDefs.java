@@ -16,12 +16,17 @@ import java.util.List;
 public class AccountActivityStepDefs {
     AccountActivityPage accountActivityPage = new AccountActivityPage();
 
-    @When("user is on Account Activity page")
+    @When("user navigates to Account Activity page")
     public void user_is_on_Account_Activity_page() {
         new AccountActivityPage().AccountActivityModule.click();
         String expectedURL = "http://zero.webappsecurity.com/bank/account-activity.html";
         String actualURL = Driver.get().getCurrentUrl();
         Assert.assertEquals(expectedURL, actualURL);
+    }
+
+    @Then("Account Activity page is displayed")
+    public void account_Activity_page_is_displayed() {
+        Assert.assertTrue(new AccountActivityPage().AccountActivityModule.isEnabled());
     }
 
     @Then("title of the page should be Zero – Account activity")
@@ -64,11 +69,11 @@ public class AccountActivityStepDefs {
 
     @Then("following columns should be displayed: Date, Description, Deposit, Withdrawal")
     public void following_columns_should_be_displayed_Date_Description_Deposit_Withdrawal() {
-       List<String> expectedColumns = new ArrayList<>(Arrays.asList("Date", "Description", "Deposit", "Withdrawal"));
-       if(expectedColumns.size()==accountActivityPage.tableHeader.size()) {
-           for (int i = 0; i < expectedColumns.size(); i++) {
-             Assert.assertEquals(expectedColumns.get(i), accountActivityPage.tableHeader.get(i).getText());
-           }
-       }
+        List<String> expectedColumns = new ArrayList<>(Arrays.asList("Date", "Description", "Deposit", "Withdrawal"));
+        if (expectedColumns.size() == accountActivityPage.tableHeader.size()) {
+            for (int i = 0; i < expectedColumns.size(); i++) {
+                Assert.assertEquals(expectedColumns.get(i), accountActivityPage.tableHeader.get(i).getText());
+            }
+        }
     }
 }

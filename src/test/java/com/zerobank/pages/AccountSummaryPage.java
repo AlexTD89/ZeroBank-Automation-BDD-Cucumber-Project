@@ -22,4 +22,41 @@ public class AccountSummaryPage extends BasePage {
 
     @FindAll(@FindBy(xpath = "//div[@class='board'][3]//tr/th"))
     public List<WebElement> CreditAccTableColumns;
+
+    @FindBy(xpath = "//a[.='Savings']")
+    public WebElement savingsLink;
+
+    @FindBy(xpath = "//a[.='Brokerage']")
+    public WebElement brokerageLink;
+
+    @FindBy(xpath = "//a[.='Checking']")
+    public WebElement checkingLink;
+
+    @FindBy(xpath = "//a[.='Credit Card']")
+    public WebElement creditCardLink;
+
+    @FindBy(xpath = "//a[.='Loan']")
+    public WebElement loanLink;
+
+    public void clickLink(String link){
+        switch (link){
+            case "Savings":
+                new AccountSummaryPage().savingsLink.click();
+                break;
+            case "Brokerage":
+                new AccountSummaryPage().brokerageLink.click();
+                break;
+            case "Checking":
+                new AccountSummaryPage().checkingLink.click();
+                break;
+            case "Credit Card":
+                new AccountSummaryPage().creditCardLink.click();
+                break;
+            case "Loan":
+                new AccountSummaryPage().loanLink.click();
+                break;
+            default:
+                System.out.println("no such link present on the page");
+        }
+    }
 }

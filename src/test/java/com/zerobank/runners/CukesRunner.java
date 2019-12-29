@@ -16,6 +16,11 @@ import org.junit.runner.RunWith;
 //        tags = "@LoginTest"
 //        tags = "@AccountSummaryPageTest"
 //        tags = "@AccountActivityPageTest"
+//        tags = "@PayBillPageTest"
+//        tags = "@AccountActivityNavigationTest"
+//        tags = ="@FindTransactionsTest"
+//        tags = "@addNewPayeeTest"
+//        tags = "@PurchaseForeignCurrencyTest"
         tags = "@wip" // work in progress
 
 )

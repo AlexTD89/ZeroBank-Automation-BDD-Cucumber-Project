@@ -19,4 +19,8 @@ public abstract class BasePage {
 
     @FindBy(linkText = "Account Activity")
     public WebElement AccountActivityModule;
+
+    @FindBy(id = "pay_bills_tab")
+    public WebElement PayBillsModule;
+
 }
