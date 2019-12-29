@@ -34,6 +34,13 @@ public class AddNewPayeeStepDefs {
 //
 //    }
 
+    /**
+     * Same method as the one above, does same functionality
+     * what's different:
+     *          this method uses Map instead of List
+     *
+     * @param userData
+     */
     @Given("creates new payee using following information")
     public void creates_new_payee_using_following_information(Map<String, String> userData) {
         payBillsPage.newPayeeName.sendKeys(userData.get("Payee Name"));
