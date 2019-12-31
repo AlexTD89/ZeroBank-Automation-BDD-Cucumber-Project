@@ -23,4 +23,7 @@ public abstract class BasePage {
     @FindBy(id = "pay_bills_tab")
     public WebElement PayBillsModule;
 
+    @FindBy(linkText = "Online Statements")
+    public WebElement onlineStatementsModule;
+
 }

@@ -14,11 +14,11 @@ public class LoginStepDefs {
 
     LoginPage loginPage = new LoginPage();
 
-    public static String    username = ConfigurationReader.get("username"),
-                            password = ConfigurationReader.get("password"),
-                            wrongUsername = ConfigurationReader.get("wrongUsername"),
-                            wrongPassword = ConfigurationReader.get("wrongPassword"),
-                            url = ConfigurationReader.get("url");
+    public String   username = ConfigurationReader.get("username"),
+                    password = ConfigurationReader.get("password"),
+                    wrongUsername = ConfigurationReader.get("wrongUsername"),
+                    wrongPassword = ConfigurationReader.get("wrongPassword"),
+                    url = ConfigurationReader.get("url");
 
     @Given("user is logged in")
     public void user_is_logged_in() {

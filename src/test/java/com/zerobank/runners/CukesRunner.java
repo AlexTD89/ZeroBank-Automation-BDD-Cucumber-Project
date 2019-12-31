@@ -19,9 +19,10 @@ import org.junit.runner.RunWith;
 //        tags = "@PayBillPageTest"
 //        tags = "@AccountActivityNavigationTest"
 //        tags = "@FindTransactionsTest"
-        tags = "@addNewPayeeTest"
+//        tags = "@addNewPayeeTest"
 //        tags = "@PurchaseForeignCurrencyTest"
-//        tags = "@wip" // work in progress
+//        tags = "@Statements&DocumentsTest"
+        tags = "@wip" // work in progress
 
 )
 public class CukesRunner {
