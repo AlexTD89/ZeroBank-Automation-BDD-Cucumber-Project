@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class LoginStepDefs {
 
@@ -23,6 +24,7 @@ public class LoginStepDefs {
     @Given("user is logged in")
     public void user_is_logged_in() {
         user_is_on_login_page();
+        BrowserUtils.waitForPresenceOfElement(By.id("user_login"),5);
         user_enters_credentials();
     }
 

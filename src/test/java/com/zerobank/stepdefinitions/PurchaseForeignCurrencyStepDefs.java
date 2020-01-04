@@ -10,7 +10,6 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.List;
 
 public class PurchaseForeignCurrencyStepDefs {

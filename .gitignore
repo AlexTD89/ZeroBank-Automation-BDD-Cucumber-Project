@@ -2,4 +2,4 @@
 zerobankautomation.iml
 target/
 .DS_Store
-
+log4j.log

@@ -1,6 +1,5 @@
 package com.zerobank.stepdefinitions;
 
-import com.zerobank.pages.LoginPage;
 import com.zerobank.pages.PayBillsPage;
 import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.Driver;

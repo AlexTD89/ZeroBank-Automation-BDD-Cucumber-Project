@@ -45,7 +45,7 @@ public class FindTransactionsStepDefs {
         int fromDate = Integer.parseInt(startDate.replace("-", ""));
         int toDate = Integer.parseInt(endDate.replace("-", ""));
         //wait() method will wait for the table(element of the table) to become present on the page
-        BrowserUtils.waitForPresenceOfElement(By.xpath("//div[@id='filtered_transactions_for_account']//tr[1]/td[1]"), 5);
+        BrowserUtils.waitForPresenceOfElement(By.xpath("//div[@id='filtered_transactions_for_account']//tr[1]/td[1]"), 10);
         List<Integer> list = new AccountActivityPage().convertListWEtoInteger(accountActivityPage.dateColumn);
         Collections.sort(list);
         Assert.assertTrue(list.get(0) >= fromDate && list.get(list.size() - 1) <= toDate);
@@ -65,7 +65,7 @@ public class FindTransactionsStepDefs {
         List<Integer> list = new AccountActivityPage().convertListWEtoInteger(accountActivityPage.dateColumn);
         //compare each element of the list with the expected date result
         for (Integer each : list) {
-            Assert.assertEquals(temp, each);
+            Assert.assertFalse(temp.equals(each));
         }
     }
 
