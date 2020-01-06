@@ -8,7 +8,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
@@ -44,7 +43,7 @@ public class PurchaseForeignCurrencyStepDefs {
         String expectedMSG = "Please, ensure that you have filled all the required fields with valid values.";
         String actualMSG = alert.getText();
         if(alert.getText().isEmpty()){
-            throw new NoSuchFrameException("No popUP Alert Appeared");
+            Assert.fail("No popUP Alert Appeared");
         }else{
             Assert.assertEquals(expectedMSG, actualMSG);
         }
