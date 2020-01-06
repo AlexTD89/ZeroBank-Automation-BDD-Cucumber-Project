@@ -88,7 +88,7 @@ public class FindTransactionsStepDefs {
         } catch (TimeoutException e) {
             System.out.println("0 search results");
             System.out.println("Table is not displayed on the page if the are no search results");
-            throw new NoSuchElementException();
+            Assert.fail("0 search results");
         }
     }
 
