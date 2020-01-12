@@ -52,8 +52,8 @@
                 <configuration>
                     <parallel>methods</parallel>
 <!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
-<!--                    <perCoreThreadCount>false</perCoreThreadCount>-->
-<!--                    <threadCountMethods>2</threadCountMethods>-->
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <threadCountMethods>2</threadCountMethods>
 <!--                    <rerunFailingTestsCount>1</rerunFailingTestsCount>-->
                     <runOrder>alphabetical</runOrder>
                     <includes>

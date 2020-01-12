@@ -16,10 +16,10 @@ import org.junit.runner.RunWith;
         dryRun = false,
 //        tags = "@LoginTest"
 //        tags = "@AccountSummaryPageTest"
-        tags = "@AccountActivityPageTest"
+//        tags = "@AccountActivityPageTest"
 //        tags = "@PayBillPageTest"
 //        tags = "@AccountActivityNavigationTest"
-//        tags = "@FindTransactionsTest"
+        tags = "@FindTransactionsTest"
 //        tags = "@addNewPayeeTest"
 //        tags = "@PurchaseForeignCurrencyTest"
 //        tags = "@Statements&DocumentsTest"

@@ -50,13 +50,4 @@ public class AccountActivityPage extends BasePage{
     @FindBy(id = "aa_type")
     public WebElement selectType;
 
-    // created object of Select Class for using the 'dropDownMenu' Select menu
-    public Select selectDropDownMenu = new Select(dropdownMenu);
-
-
-
-
-
-
-
 }
