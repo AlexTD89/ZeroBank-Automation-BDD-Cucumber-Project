@@ -3,6 +3,7 @@ package com.zerobank.stepdefinitions;
 
 import com.zerobank.pages.AccountActivityPage;
 import com.zerobank.utilities.BrowserUtils;
+import com.zerobank.utilities.OtherUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -46,15 +47,15 @@ public class FindTransactionsStepDefs {
         int toDate = Integer.parseInt(endDate.replace("-", ""));
         //wait() method will wait for the table(element of the table) to become present on the page
         BrowserUtils.waitForPresenceOfElement(By.xpath("//div[@id='filtered_transactions_for_account']//tr[1]/td[1]"), 10);
-        List<Integer> list = new AccountActivityPage().convertListWEtoInteger(accountActivityPage.dateColumn);
+        List<Integer> list = OtherUtils.convertListWEtoInteger(accountActivityPage.dateColumn);
         Collections.sort(list);
         Assert.assertTrue(list.get(0) >= fromDate && list.get(list.size() - 1) <= toDate);
     }
 
     @Then("the results should be sorted by most recent date")
     public void the_results_should_be_sorted_by_most_recent_date() {
-        List<Integer> actualOrder = new AccountActivityPage().convertListWEtoInteger(accountActivityPage.dateColumn);
-        List<Integer> expectedOrder = accountActivityPage.sortListDescending(actualOrder);
+        List<Integer> actualOrder = OtherUtils.convertListWEtoInteger(accountActivityPage.dateColumn);
+        List<Integer> expectedOrder = OtherUtils.sortListDescending(actualOrder);
         Assert.assertEquals(expectedOrder, actualOrder);
     }
 
@@ -62,7 +63,7 @@ public class FindTransactionsStepDefs {
     public void the_results_table_should_only_not_contain_transactions_dated(String date) {
         Integer temp = Integer.parseInt(date.replace("-", ""));
         BrowserUtils.waitForPresenceOfElement(By.xpath("//div[@id='filtered_transactions_for_account']//tr[1]/td[1]"), 5);
-        List<Integer> list = new AccountActivityPage().convertListWEtoInteger(accountActivityPage.dateColumn);
+        List<Integer> list = OtherUtils.convertListWEtoInteger(accountActivityPage.dateColumn);
         //compare each element of the list with the expected date result
         for (Integer each : list) {
             Assert.assertFalse(temp.equals(each));
@@ -79,7 +80,7 @@ public class FindTransactionsStepDefs {
     public void results_table_should_only_show_descriptions_containing(String input) {
         try {
             BrowserUtils.waitForPresenceOfElement(By.xpath("//div[@id='filtered_transactions_for_account']//tr[1]/td[1]"), 5);
-            List<String> list = new AccountActivityPage().convertListWEtoString(accountActivityPage.descriptionColumn);
+            List<String> list = OtherUtils.convertListWEtoString(accountActivityPage.descriptionColumn);
             for (String eachElement : list) {
                 Assert.assertTrue(eachElement.contains(input));
             }
@@ -95,7 +96,7 @@ public class FindTransactionsStepDefs {
     @Then("results table should not show descriptions containing {string}")
     public void results_table_should_not_show_descriptions_containing(String input) {
         BrowserUtils.waitForPresenceOfElement(By.xpath("//div[@id='filtered_transactions_for_account']//tr[1]/td[1]"), 5);
-        List<String> list = new AccountActivityPage().convertListWEtoString(accountActivityPage.descriptionColumn);
+        List<String> list = OtherUtils.convertListWEtoString(accountActivityPage.descriptionColumn);
         for (String eachElement : list) {
             Assert.assertFalse(eachElement.contains(input));
         }

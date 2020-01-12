@@ -103,5 +103,4 @@ public class PayBillsPageStepDefs {
         payBillsPage.dateInputBox.sendKeys("abcd");
         please_fill_out_this_field_message_should_be_displayed_with_blank_box("date");
     }
-
 }

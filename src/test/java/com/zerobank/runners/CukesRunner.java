@@ -16,14 +16,14 @@ import org.junit.runner.RunWith;
         dryRun = false,
 //        tags = "@LoginTest"
 //        tags = "@AccountSummaryPageTest"
-//        tags = "@AccountActivityPageTest"
+        tags = "@AccountActivityPageTest"
 //        tags = "@PayBillPageTest"
 //        tags = "@AccountActivityNavigationTest"
 //        tags = "@FindTransactionsTest"
 //        tags = "@addNewPayeeTest"
 //        tags = "@PurchaseForeignCurrencyTest"
 //        tags = "@Statements&DocumentsTest"
-        tags = "@wip" // work in progress
+//        tags = "@wip" // work in progress
 
 )
 public class CukesRunner {

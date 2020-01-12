@@ -13,7 +13,7 @@ Feature: Statements and Documents details
       | 2011 | 2     |
       | 2012 | 1     |
 
-
+@wip
   Scenario Outline: Download statements
     Given the user accesses the Statements & Documents tab
     And the user selects the Recent Statements Year <year>

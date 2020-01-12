@@ -3,6 +3,7 @@ package com.zerobank.stepdefinitions;
 import com.zerobank.pages.AccountActivityPage;
 import com.zerobank.pages.AccountSummaryPage;
 import com.zerobank.utilities.BrowserUtils;
+import com.zerobank.utilities.OtherUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -17,7 +18,7 @@ public class AccActivityNavigationStepDefs {
 
     @Then("Account drop down should have {string} selected")
     public void account_drop_down_should_have_selected(String expectedOption) {
-        String actualOption = new AccountActivityPage().getFirstSelectedOption();
+        String actualOption = OtherUtils.getFirstSelectedOption(new AccountActivityPage().dropdownMenu);
         Assert.assertEquals(expectedOption, actualOption);
     }
 

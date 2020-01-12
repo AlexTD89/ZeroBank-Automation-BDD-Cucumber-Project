@@ -11,6 +11,7 @@ Feature: Account Activity page should display the following features
   Scenario: In the Account drop down default option should be Savings
     Then In the Account drop down default option should be Savings
 
+    # this test fails
   Scenario: Account drop down should have the following options: Savings, Checking, Loan, Credit Card, Brokerage
     Then drop down menu should have the following options: Savings, Checking, Loan, Credit Card, Brokerage
 

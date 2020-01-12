@@ -1,12 +1,12 @@
 package com.zerobank.stepdefinitions;
 
 import com.zerobank.pages.AccountActivityPage;
+import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -39,8 +39,7 @@ public class AccountActivityStepDefs {
     public void in_the_Account_drop_down_default_option_should_be_Savings() {
         String expectedDefaultOption = "Savings";
         //creating object of the select class
-        Select select = new Select(accountActivityPage.dropdownMenu);
-        String actualDefaultOption = select.getFirstSelectedOption().getText();
+        String actualDefaultOption = new AccountActivityPage().selectDropDownMenu.getFirstSelectedOption().getText();
         //comparing actual with expected
         Assert.assertEquals(expectedDefaultOption, actualDefaultOption);
     }
@@ -50,14 +49,10 @@ public class AccountActivityStepDefs {
         List<String> expectedOptions = new ArrayList<>(Arrays.asList("Savings", "Checking", "Loan", "Credit Card", "Brokerage"));
 
         //creating object of the select class
-        Select select = new Select(accountActivityPage.dropdownMenu);
-        List<WebElement> actualOptionsList = select.getOptions();
+        List<WebElement> actualOptionsList = new AccountActivityPage().selectDropDownMenu.getOptions();
 
         //converting webElement List to String List
-        List<String> actualOptions = new ArrayList<>();
-        for (WebElement actualOption : actualOptionsList) {
-            actualOptions.add(actualOption.getText());
-        }
+        List<String> actualOptions = BrowserUtils.getElementsText(actualOptionsList);
 
         System.out.println(actualOptions);
         //comparing actual with expected

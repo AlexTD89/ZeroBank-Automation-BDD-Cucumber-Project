@@ -4,9 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class AccountActivityPage extends BasePage{
@@ -53,59 +50,13 @@ public class AccountActivityPage extends BasePage{
     @FindBy(id = "aa_type")
     public WebElement selectType;
 
+    // created object of Select Class for using the 'dropDownMenu' Select menu
+    public Select selectDropDownMenu = new Select(dropdownMenu);
 
-    /**
-     * This method will return the first selected option in dropdown Select menu
-     * @return
-     */
-    public String getFirstSelectedOption(){
-        Select select = new Select(dropdownMenu);
-        return select.getFirstSelectedOption().getText();
-    }
 
-    /**
-     * This method will pass a List of WebElements and converts it to List of Integers
-     * @param listWeb
-     * @return
-     */
-    public List<Integer> convertListWEtoInteger(List<WebElement> listWeb){
-        List<Integer> list = new ArrayList<>();
-        for (WebElement webElement : listWeb) {
-            String str = webElement.getText().replace("-","");
-            list.add(Integer.parseInt(str));
-        }
-        return list;
-    }
 
-    /**
-     * This method will pass a list of WebElements and converts it to List of Strings
-     * @param listweb
-     * @return
-     */
-    public List<String> convertListWEtoString(List<WebElement> listweb){
-        List<String> list = new ArrayList<>();
-        for (WebElement webElement : listweb) {
-            list.add(webElement.getText());
-        }
-        return list;
-    }
 
-    /**
-     * This method will pass a List of Integers and will sort it in Descending order
-     * @param list
-     * @return
-     */
-    public List<Integer> sortListDescending(List<Integer> list){
-        List<Integer> list1 = new ArrayList<>();
-        list1.addAll(list);
-        Collections.sort(list1);
-        List<Integer> newList = new ArrayList<>();
-        for (int i = list.size()-1; i >=0; i--) {
-             newList.add(list1.get(i));
-        }
 
-        return newList;
-    }
 
 
 }
