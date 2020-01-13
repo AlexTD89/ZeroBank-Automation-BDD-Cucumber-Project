@@ -1,4 +1,4 @@
-@PurchaseForeignCurrencyTest
+@PurchaseForeignCurrencyTest @RegressionTest
 Feature: Purchase Foreign Currency
 
   Scenario: Available currencies

@@ -1,4 +1,4 @@
-@AccountActivityPageTest
+@AccountActivityPageTest @RegressionTest
 Feature: Account Activity page should display the following features
 
   Background:

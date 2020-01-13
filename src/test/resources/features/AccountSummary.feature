@@ -1,4 +1,4 @@
-@AccountSummaryPageTest
+@AccountSummaryPageTest @RegressionTest
 Feature: Account Summary page should display the following features
 
 

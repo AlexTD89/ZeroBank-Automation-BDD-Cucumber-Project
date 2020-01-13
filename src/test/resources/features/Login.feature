@@ -1,4 +1,4 @@
-@LoginTest
+@LoginTest @SmokeTest @RegressionTest
 Feature: User should be able to login
 
   Background:

@@ -1,4 +1,4 @@
-@PayBillPageTest
+@PayBillPageTest @RegressionTest
 Feature: Testing the features of the Pay Bill module
 
   Background:

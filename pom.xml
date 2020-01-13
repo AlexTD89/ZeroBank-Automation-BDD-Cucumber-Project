@@ -54,11 +54,12 @@
 <!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
                     <perCoreThreadCount>false</perCoreThreadCount>
                     <threadCountMethods>2</threadCountMethods>
-<!--                    <rerunFailingTestsCount>1</rerunFailingTestsCount>-->
+                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
                     <runOrder>alphabetical</runOrder>
                     <includes>
                         <include>**/*CukesRunner.java</include>
-                        <include>**/*FailedTestRunner.java</include>
+<!--                        <include>**/*FailedTestRunner.java</include>-->
+                        <include>${file}</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>

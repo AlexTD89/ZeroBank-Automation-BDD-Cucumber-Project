@@ -1,4 +1,4 @@
-@Statements&DocumentsTest
+@Statements&DocumentsTest @RegressionTest
 Feature: Statements and Documents details
 
 

@@ -43,6 +43,7 @@ public class LoginStepDefs {
 
     @Then("authorized user should be able to login")
     public void authorized_user_should_be_able_to_login() {
+        Driver.getLogger().info("comparing username");
         Assert.assertEquals(username, loginPage.usernameMenu.getText());
     }
 

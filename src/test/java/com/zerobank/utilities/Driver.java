@@ -28,7 +28,6 @@ public class Driver {
         if (driverPool.get() == null || ((RemoteWebDriver) driverPool.get()).getSessionId() == null) {
 
             // get browser value either from system arguments or properties file
-
             String browser= System.getProperty("browser") != null?browser = System.getProperty("browser"):ConfigurationReader.get("browser");
 
             logger.info("Creating webdriver for - " + browser);
@@ -76,5 +75,9 @@ public class Driver {
 
     public static void closeDriver() {
         driverPool.get().quit();
+    }
+
+    public static Logger getLogger(){
+        return logger;
     }
 }

@@ -1,4 +1,4 @@
-@FindTransactionsTest
+@FindTransactionsTest @RegressionTest
 Feature: Find Transactions in Account Activity
 
   Scenario: Search date range
