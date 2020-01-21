@@ -4,6 +4,7 @@ package com.zerobank.stepdefinitions;
 import com.zerobank.pages.AccountActivityPage;
 import com.zerobank.pages.BasePage;
 import com.zerobank.utilities.BrowserUtils;
+import com.zerobank.utilities.Driver;
 import com.zerobank.utilities.OtherUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

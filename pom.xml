@@ -42,7 +42,37 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.3</version>
+        </dependency>
     </dependencies>
+    <!--here we supposed to use our id, oracle will ask for registration-->
+    <repositories>
+        <repository>
+            <id>oracle</id>
+            <url>http://www.datanucleus.org/downloads/maven2/</url>
+        </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>
@@ -51,20 +81,21 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <parallel>methods</parallel>
-<!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
+                    <!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
                     <perCoreThreadCount>false</perCoreThreadCount>
-                    <threadCountMethods>2</threadCountMethods>
-                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
+                    <threadCountMethods>5</threadCountMethods>
+                    <!--                    <rerunFailingTestsCount>1</rerunFailingTestsCount>-->
                     <runOrder>alphabetical</runOrder>
                     <includes>
                         <include>**/*CukesRunner.java</include>
-<!--                        <include>**/*FailedTestRunner.java</include>-->
-                        <include>${file}</include>
+                        <!--                        <include>**/*FailedTestRunner.java</include>-->
+                        <!--                        <include>${file}</include>-->
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
             <plugin>
+                <!--                it is a jason report plugin-->
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <version>5.0.0</version>

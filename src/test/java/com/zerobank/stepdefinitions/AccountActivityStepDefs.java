@@ -57,7 +57,6 @@ public class AccountActivityStepDefs {
 
         //converting webElement List to String List
         List<String> actualOptions = BrowserUtils.getElementsText(actualOptionsList);
-
         System.out.println(actualOptions);
         //comparing actual with expected
         Collections.sort(actualOptions);
